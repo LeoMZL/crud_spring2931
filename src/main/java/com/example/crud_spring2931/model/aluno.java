@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class pessoa {
+public class aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private int idade;
+    private String curso;
     //Lombok gera tudo automaticamente
     //getId, getNome, getIdade
     //setId, setNome, setIdade

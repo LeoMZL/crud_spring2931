@@ -1,8 +1,8 @@
 package com.example.crud_spring2931.controller;
 
 
-import com.example.crud_spring2931.model.pessoa;
-import com.example.crud_spring2931.service.pessoaService;
+import com.example.crud_spring2931.model.aluno;
+import com.example.crud_spring2931.service.alunoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,30 +13,30 @@ import java.util.List;
 @RestController
 @RequestMapping("/aluno")
 @RequiredArgsConstructor
-public class pessoaController {
+public class alunoController {
 
-    private final pessoaService service;
+    private final alunoService service;
 
     //GET /aluno (listar todas)
     @GetMapping
-    public List<pessoa>listar(){
+    public List<aluno>listar(){
         return service.listar();
     }
 
     //GET /aluno/{id} (busca por id)
     @GetMapping("/{id}")
-    public ResponseEntity<pessoa> buscar(@PathVariable Long id){
+    public ResponseEntity<aluno> buscar(@PathVariable Long id){
         return ResponseEntity.ok(service.buscarPorId(id));
 
     }
     //Post /aluno/{id}
     @PostMapping
-    public ResponseEntity<pessoa> salvar(@RequestBody pessoa Pessoa){
-        return ResponseEntity.ok(service.salvar(Pessoa));
+    public ResponseEntity<aluno> salvar(@RequestBody aluno Aluno){
+        return ResponseEntity.ok(service.salvar(Aluno));
     }
     //PUT /aluno/{id} (Atualizar)
     @PutMapping("/{id}")
-    public ResponseEntity<pessoa>atualizar(@PathVariable Long id, @RequestBody pessoa dados){
+    public ResponseEntity<aluno>atualizar(@PathVariable Long id, @RequestBody aluno dados){
         return ResponseEntity.ok(service.atualizar(id, dados));
     }
     //delete /aluno/{id}
